@@ -29,6 +29,14 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Preview
+@Composable
+fun DemoTextPreview(){
+    ComposeDemoTheme {
+        DemoText(message="Welcome to Android", fontSize = 12f)
+    }
+}
+
 @Composable
 fun DemoText(message: String, fontSize: Float) {
     Text(
