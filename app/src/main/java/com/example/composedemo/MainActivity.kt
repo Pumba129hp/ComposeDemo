@@ -15,8 +15,10 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -39,11 +41,13 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Preview
+@Preview(showSystemUi = true)
 @Composable
 fun DemoTextPreview(){
     ComposeDemoTheme {
-        DemoText(message="Welcome to Android", fontSize = 12f)
+        Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding->
+            DemoScreen(modifier = Modifier.padding(innerPadding))
+        }
     }
 }
 
